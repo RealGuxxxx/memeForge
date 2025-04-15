@@ -2,7 +2,7 @@
 .env.production
 .next
 .next.config.js
-.package-lock.json
+package-lock.json
 
 node_modules
 
