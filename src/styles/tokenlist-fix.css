@@ -1,0 +1,48 @@
+/* TokenList滚动修复 */
+.token-list-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 确保ScrollView正确工作 */
+.token-list-container > div[class*="ScrollView__StyledScrollView"] {
+  flex: 1 !important;
+  width: 100% !important;
+  min-height: 0 !important; 
+  max-height: calc(100vh - 240px) !important;
+  overflow-y: auto !important;
+}
+
+/* 修复滚动容器 */
+.scroll-view-inner {
+  height: auto !important;
+  min-height: 100% !important;
+  padding-bottom: 60px !important;
+}
+
+/* 确保窗口内容区域可滚动 */
+div[class*="WindowContent__StyledWindowContent"] {
+  overflow: hidden !important;
+  max-height: calc(100vh - 180px) !important;
+}
+
+/* 确保桌面视图格子布局正确显示 */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 8px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+/* 移动端滚动修复 */
+@media (max-width: 768px) {
+  .token-list-container > div[class*="ScrollView__StyledScrollView"] {
+    max-height: calc(100vh - 200px) !important;
+  }
+} 
