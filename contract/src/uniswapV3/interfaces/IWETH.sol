@@ -1,8 +1,0 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
-
-interface IWETH {
-    function deposit() external payable;
-    function withdraw(uint256) external;
-    function approve(address, uint256) external returns (bool);
-}
